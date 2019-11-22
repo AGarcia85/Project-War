@@ -38,18 +38,19 @@ class Deck {
                 "King",
                 "Ace"
             ]
-            // 5. create a way to split the deck in 2 for each player
-        for(let i =0; i < suits.length; i++) {
-            for(let j = 0; j < ranks.length; i++) {
+            // 5. create a way to add 52 cards to the deck
+            for(let i = 0; i < suits.length; i++) {
+            for(let j = 0; j < ranks.length; j++) {
                 let suit = suits[i]
-                let rank = ranks[i]
-                let value = i 
-                this.cards.push(`${ranks[rank]} of ${suits[suit]}`);
-
-                
+                let rank = ranks[j]
+                let value = j 
+                // return this.cards.push(new Cards(rank, suit, value))
+                // return will only call one set of cards and stop the loop.
+                this.cards.push(new Cards(rank, suit, value))
             }
-            const deck = new Deck();
-            console.log(deck.cards);
-    } 
-        }
+        } 
+    }
 }
+
+const deck = new Deck();
+console.log(deck.cards);

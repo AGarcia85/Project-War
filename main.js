@@ -23,20 +23,33 @@ class Deck {
                 "Hearts",
                 "Spades"
             ]
-            let rank = [
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
+            let ranks = [
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
                 "Jack",
                 "Queen",
                 "King",
                 "Ace"
             ]
-    }
-        
+            // 5. create a way to split the deck in 2 for each player
+        for(let i =0; i < suits.length; i++) {
+            for(let j = 0; j < ranks.length; i++) {
+                let suit = suits[i]
+                let rank = ranks[i]
+                let value = i 
+                this.cards.push(`${ranks[rank]} of ${suits[suit]}`);
+
+                
+            }
+            const deck = new Deck();
+            console.log(deck.cards);
+    } 
+        }
 }

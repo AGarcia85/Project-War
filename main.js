@@ -66,11 +66,12 @@ function shuffle(deck) {
       deck[k] = deck [l];
       deck[l] = temp;
     }
-
-    return deck;
-    
+    return deck;    
 }
-    console.log(shuffle(deck.cards));
+    let shuffled = (deck.cards);
+    console.log(shuffle(shuffled));
+    
+
 // 7. create player class that will add players and hold their cards(hands)
 
 class Player {
@@ -81,3 +82,13 @@ class Player {
 
 const player1 = new Player();
 const player2 = new Player();
+// 8. add a way to get the players their hands
+
+const hand1 = shuffled.slice(0, 26);
+const hand2 = shuffled.slice(26)
+
+player1.hand = hand1
+player2.hand = hand2
+
+console.log(player1.hand);
+console.log(player2.hand);

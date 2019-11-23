@@ -53,19 +53,31 @@ class Deck {
 }
 
 const deck = new Deck();
-console.log(deck.cards);
+//console.log(deck.cards);
 
 // 6. create a shuffle function that will deal the deck to to players, will use Fisher-Yates 
 function shuffle(deck) {
-    let i = deck.length, temp, j;
+    let k = deck.length, temp, l;
   
-    while (i) {
-      j = Math.floor(Math.random() * i);
-      i -= 1;
-      temp = deck[i];
-      deck[i] = deck [j];
-      deck[j] = temp;
+    while (0 !== k) {
+      l = Math.floor(Math.random() * k);
+      k -= 1;
+      let temp = deck[k];
+      deck[k] = deck [l];
+      deck[l] = temp;
     }
 
-    console.log(deck)
+    return deck;
+    
 }
+    console.log(shuffle(deck.cards));
+// 7. create player class that will add players and hold their cards(hands)
+
+class Player {
+    constructor() {
+        this.hand = []
+    }
+}
+
+const player1 = new Player();
+const player2 = new Player();

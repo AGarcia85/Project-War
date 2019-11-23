@@ -54,3 +54,18 @@ class Deck {
 
 const deck = new Deck();
 console.log(deck.cards);
+
+// 6. create a shuffle function that will deal the deck to to players, will use Fisher-Yates 
+function shuffle(deck) {
+    let i = deck.length, temp, j;
+  
+    while (i) {
+      j = Math.floor(Math.random() * i);
+      i -= 1;
+      temp = deck[i];
+      deck[i] = deck [j];
+      deck[j] = temp;
+    }
+
+    console.log(deck)
+}

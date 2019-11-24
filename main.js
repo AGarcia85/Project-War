@@ -1,4 +1,4 @@
-console.log("War Baby!");
+console.log("Lets Get Ready To Rumble!");
 
 //1. first create the class*
 //2. construct its properties*
@@ -66,7 +66,7 @@ function shuffle(deck) {
       deck[k] = deck [l];
       deck[l] = temp;
     }
-    return deck;    
+    return shuffle;    
 }
     let shuffled = (deck.cards);
     console.log(shuffle(shuffled));
@@ -92,3 +92,38 @@ player2.hand = hand2
 
 console.log(player1.hand);
 console.log(player2.hand);
+
+// 9a. add a play game function that will allow you to play the game. 
+// 9b. also loop it so that all cards are played.
+// 9c. make sure to declare a winner after each game.
+function playWar() {
+    for(let i = 0; i < player1.hand.length; i++) {
+        for(let j = 0; j < player2.hand.length; j++) {
+           // added player 1 win argument
+            if(player1.hand[i].value > player2.hand[j].value) {
+            console.log("Player 1 wins round!");
+            player1.hand.push(player1.hand[i]);
+            player1.hand.push(player2.hand[j]);
+            player1.hand.shift();
+            player2.hand.shift();
+            
+            // added player 2 win argument  
+        }else if(player1.hand[i].value < player2.hand[j].value) {
+            console.log("Player 2 wins round!");
+            player2.hand.push(player1.hand[i]);
+            player2.hand.push(player2.hand[j]);
+            player1.hand.shift();
+            player2.hand.shift();
+            
+            
+        }    // added game winner 
+        if(player1.hand.length === 52) {
+            alert("Player 1 Wins War... Player 2 sucks!");
+        }else if(player2.hand.length === 52) {
+            alert("Player 2 Wins War... Player 1 sucks!")
+        } 
+        }
+        
+    }
+}   
+console.log(playWar());

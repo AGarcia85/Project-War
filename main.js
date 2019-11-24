@@ -101,7 +101,7 @@ function playWar() {
         for(let n = 0; n < player2.hand.length; n++) {
            // added player 1 win argument
             if(player1.hand[m].value > player2.hand[n].value) {
-            console.log("Player 1 wins! Flawless!");
+            console.log("Player 1 wins! Flawless Victory!");
             player1.hand.push(player1.hand[m]);
             player1.hand.push(player2.hand[n]);
             player1.hand.shift();

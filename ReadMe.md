@@ -4,11 +4,11 @@
     welcome to my War card game project on none other than JAVASCRIPT!!!!
 
 ### Table of Contents
-    * Purpose of this Project
+    1. Purpose of this Project
 
-    * Description 
+    2. Description 
 
-    * What I Have Learned
+    3. What I Have Learned
 
 #### Purpose of this Project
     The method to this maddness is to get me more comfortable  and familiar with JavaScript coding. I feel that this is helping even if my pace is slow. With more practice and projects I feel that I will become more efficient at it. 

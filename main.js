@@ -1,4 +1,4 @@
-console.log("Lets Get Ready To Rumble!");
+console.log("War Baby!");
 
 //1. first create the class*
 //2. construct its properties*
@@ -90,33 +90,52 @@ const hand2 = shuffled.slice(26)
 player1.hand = hand1
 player2.hand = hand2
 
-console.log(player1.hand);
-console.log(player2.hand);
+//console.log(player1.hand);
+//console.log(player2.hand);
 
 // 9a. add a play game function that will allow you to play the game. 
 // 9b. also loop it so that all cards are played.
 // 9c. make sure to declare a winner after each game.
 function playWar() {
-    for(let i = 0; i < player1.hand.length; i++) {
-        for(let j = 0; j < player2.hand.length; j++) {
+    for(let m = 0; m < player1.hand.length; m++) {
+        for(let n = 0; n < player2.hand.length; n++) {
            // added player 1 win argument
-            if(player1.hand[i].value > player2.hand[j].value) {
+            if(player1.hand[m].value > player2.hand[n].value) {
             console.log("Player 1 wins round!");
-            player1.hand.push(player1.hand[i]);
-            player1.hand.push(player2.hand[j]);
+            player1.hand.push(player1.hand[m]);
+            player1.hand.push(player2.hand[n]);
             player1.hand.shift();
             player2.hand.shift();
-            
+            console.log(player1.hand[m]);
+            console.log("Player 1 has " + player1.hand.length + " left");
+            console.log(player2.hand[n]);
+            console.log("Player 2 has " + player2.hand.length + " left");
+
             // added player 2 win argument  
-        }else if(player1.hand[i].value < player2.hand[j].value) {
+        }else if(player1.hand[m].value < player2.hand[n].value) {
             console.log("Player 2 wins round!");
-            player2.hand.push(player1.hand[i]);
-            player2.hand.push(player2.hand[j]);
+            player2.hand.push(player1.hand[m]);
+            player2.hand.push(player2.hand[n]);
             player1.hand.shift();
             player2.hand.shift();
+            console.log(player1.hand[m]);
+            console.log("Player 1 has " + player1.hand.length + " left");
+            console.log(player2.hand[n]);
+            console.log("Player 2 has " + player2.hand.length + " left");
             
-            
-        }    // added game winner 
+            // added tie argument.
+        }else {
+            console.log("Tie! You Both Suck!!!");
+            player1.hand.push(player1.hand[m]);
+            player2.hand.push(player2.hand[n]);
+            player1.hand.shift();
+            player2.hand.shift();
+            console.log(player1.hand[m]);
+            console.log("Player 1 has " + player1.hand.length + " left");
+            console.log(player2.hand[n]);
+            console.log("Player 2 has " + player2.hand.length + " left");
+            // added game winner 
+        }
         if(player1.hand.length === 52) {
             alert("Player 1 Wins War... Player 2 sucks!");
         }else if(player2.hand.length === 52) {
@@ -125,5 +144,7 @@ function playWar() {
         }
         
     }
+    
 }   
 console.log(playWar());
+// something is going on with my game its suit and rank is reversed and screwing uo the value

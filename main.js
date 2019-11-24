@@ -1,4 +1,4 @@
-console.log("War Baby!");
+console.log("Mortal Kombat!!!!!");
 
 //1. first create the class*
 //2. construct its properties*
@@ -101,7 +101,7 @@ function playWar() {
         for(let n = 0; n < player2.hand.length; n++) {
            // added player 1 win argument
             if(player1.hand[m].value > player2.hand[n].value) {
-            console.log("Player 1 wins round!");
+            console.log("Player 1 wins! Flawless!");
             player1.hand.push(player1.hand[m]);
             player1.hand.push(player2.hand[n]);
             player1.hand.shift();
@@ -113,7 +113,7 @@ function playWar() {
 
             // added player 2 win argument  
         }else if(player1.hand[m].value < player2.hand[n].value) {
-            console.log("Player 2 wins round!");
+            console.log("Player 2 wins? Flawlass Victory!");
             player2.hand.push(player1.hand[m]);
             player2.hand.push(player2.hand[n]);
             player1.hand.shift();
@@ -125,7 +125,7 @@ function playWar() {
             
             // added tie argument.
         }else {
-            console.log("Tie! You Both Suck!!!");
+            console.log("Tie! Friendship!?");
             player1.hand.push(player1.hand[m]);
             player2.hand.push(player2.hand[n]);
             player1.hand.shift();
@@ -137,9 +137,9 @@ function playWar() {
             // added game winner 
         }
         if(player1.hand.length === 52) {
-            alert("Player 1 Wins War... Player 2 sucks!");
+            alert("Player 1 Wins! Fatality!!! Player 2 You weak pathetic fool! You're Soul is mine!");
         }else if(player2.hand.length === 52) {
-            alert("Player 2 Wins War... Player 1 sucks!")
+            alert("Player 2 Wins! Fatality!!! Player 1 You weak pathetic fool! You're Soul is mine!")
         } 
         }
         

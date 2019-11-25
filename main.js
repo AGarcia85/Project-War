@@ -17,13 +17,7 @@ class Cards {
 class Deck {
     constructor() {
         this.cards = []
-            let suits = [
-                "Clubs",
-                "Diamonds",
-                "Hearts",
-                "Spades"
-            ]
-            let ranks = [
+           let ranks = [
                 "2",
                 "3",
                 "4",
@@ -37,9 +31,16 @@ class Deck {
                 "Queen",
                 "King",
                 "Ace"
+            ] 
+            let suits = [
+                "Clubs",
+                "Diamonds",
+                "Hearts",
+                "Spades"
             ]
+            
             // 5. create a way to add 52 cards to the deck
-            for(let i = 0; i < suits.length; i++) {
+            /*for(let i = 0; i < suits.length; i++) {
             for(let j = 0; j < ranks.length; j++) {
                 let suit = suits[i]
                 let rank = ranks[j]
@@ -48,28 +49,37 @@ class Deck {
                 // return will only call one set of cards and stop the loop.
                 this.cards.push(new Cards(rank, suit, value))
             }
-        } 
-    }
+        } */
+
+    ranks.forEach((rank, value) => {
+        suits.forEach(suit => this.cards.push(new Cards(rank, suit, value)))
+    })
 }
-
-const deck = new Deck();
-//console.log(deck.cards);
-
-// 6. create a shuffle function that will deal the deck to to players, will use Fisher-Yates 
-function shuffle(deck) {
-    let k = deck.length, temp, l;
+    
+    shuffle(deck) {
+    let k = this.cards.length, temp, l;
   
     while (0 !== k) {
       l = Math.floor(Math.random() * k);
       k -= 1;
-      let temp = deck[k];
-      deck[k] = deck [l];
-      deck[l] = temp;
+      let temp = this.cards[k];
+      this.cards[k] = this.cards[l];
+      this.cards[l] = temp;
     }
-    return shuffle;    
+    return deck;    
 }
+    
+}
+
+  
+    const deck = new Deck();
+    deck.shuffle();
     let shuffled = (deck.cards);
-    console.log(shuffle(shuffled));
+ 
+//console.log(deck.cards);
+
+// 6. create a shuffle function that will deal the deck to to players, will use Fisher-Yates 
+
     
 
 // 7. create player class that will add players and hold their cards(hands)
@@ -85,7 +95,7 @@ const player2 = new Player();
 // 8. add a way to get the players their hands
 
 const hand1 = shuffled.slice(0, 26);
-const hand2 = shuffled.slice(26)
+const hand2 = shuffled.slice(0, 26)
 
 player1.hand = hand1
 player2.hand = hand2
@@ -113,7 +123,7 @@ function playWar() {
 
             // added player 2 win argument  
         }else if(player1.hand[m].value < player2.hand[n].value) {
-            console.log("Player 2 wins? Flawlass Victory!");
+            console.log("Player 2 wins! Flawlass Victory!");
             player2.hand.push(player1.hand[m]);
             player2.hand.push(player2.hand[n]);
             player1.hand.shift();

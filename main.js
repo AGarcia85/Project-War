@@ -110,7 +110,10 @@ function playWar() {
     for(let m = 0; m < player1.hand.length; m++) {
         for(let n = 0; n < player2.hand.length; n++) {
            // added player 1 win argument
-            if(player1.hand[m].value > player2.hand[n].value) {
+        // if (player1.hand[m].value == undefined || player2.hand[n].value == undefined){
+        //     console.log('this is undefined')
+        // }
+         if(player1.hand[m].value > player2.hand[n].value) {
             console.log("Player 1 wins! Flawless Victory!");
             player1.hand.push(player1.hand[m]);
             player1.hand.push(player2.hand[n]);
@@ -123,7 +126,7 @@ function playWar() {
 
             // added player 2 win argument  
         }else if(player1.hand[m].value < player2.hand[n].value) {
-            console.log("Player 2 wins! Flawlass Victory!");
+            console.log("Player 2 wins! Flawless Victory!");
             player2.hand.push(player1.hand[m]);
             player2.hand.push(player2.hand[n]);
             player1.hand.shift();
@@ -132,8 +135,11 @@ function playWar() {
             console.log("Player 1 has " + player1.hand.length + " left");
             console.log(player2.hand[n]);
             console.log("Player 2 has " + player2.hand.length + " left");
+
+        // }else if((player1.hand[m].value = "undefined") || (player2.hand[n].value = "undefined")) {
+        //     console.log("Something went wrong fool!")
             
-            // added tie argument.
+
         }else {
             console.log("Tie! Friendship!?");
             player1.hand.push(player1.hand[m]);
@@ -154,6 +160,7 @@ function playWar() {
         }
         
     }
+    return playWar()
     
 }   
 console.log(playWar());
